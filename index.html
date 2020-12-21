@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- CHART.JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>   
+    
+    <!-- STYLES FOR CENTERING-->
+    <style>
+        body {
+          background-color:rgb(200,200,200);;
+        }
+        .outer-container {
+        position : absolute;
+        display: table;
+        width: 100%;
+        height: 100%;
+        }
+        .inner-container {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        }
+      </style>
+
+    <title>Corona Dashboard</title>	
+  </head>
+  <body>
+    <!-- HEADER -->
+    <nav class="navbar fixed-top navbar-dark bg-dark justify-content-center">
+    <img src="help_grey233.svg" alt="" style="padding-right: 10px"><a style="color:rgb(233,233,233)" href="https://www.cottbus.de/verwaltung/gb_iii/gesundheit/corona/index.html">Coronavirus SARS-CoV-2 in ...</a>
+    </nav>
+    <!-- FOOTER -->
+    <nav class="navbar fixed-bottom navbar-dark bg-dark justify-content-center">
+    <a style="color:rgb(233,233,233); font-size: 0.8em; padding-right:10px" href="https://npgeo-corona-npgeo-de.hub.arcgis.com/datasets/dd4580c810204019a7b8eb3e0b329dd6_0">RKI, DL-DE/BY-2-0</a><a style="color:rgb(233,233,233); font-size: 0.8em; padding-right:10px">&#169;</a><a style="color:rgb(233,233,233);font-size: 0.8em" href="https://www.cottbus.de/verwaltung/gb_iv/stadtentwicklung/">my name 2020</a>
+    </nav>
+    <!-- CENTERING CONTAINER -->
+    <div class="outer-container">
+    <div class="inner-container">
+    <div class="container mt-5">
+    <div class="row justify-content-center">
+    <!-- UPDATE -->
+		<div class="col-auto mb-3">
+            <div class="card" style="width: 18rem; background-color: rgb(233,233,233);">
+                <div class="card-body">
+					        <h6 class="card-subtitle mb-2 text-muted">Update</h6>
+					        <h5 class="card-title">19.12.2020</h5>
+                </div>
+            </div>
+        </div>
+    <!-- INZIDENZ -->
+		<div class="col-auto mb-3">
+            <div class="card" style="width: 18rem; background-color: rgb(233,233,233);">
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-muted">7 day incidence</h6>
+					          <h5 class="card-title">400<a style="color:rgb(250,0,0);font-size: 0.8em; padding-left: 10px;">+11</a></h5>
+                </div>
+            </div>
+        </div>
+    <!-- INFEKTIONEN -->    
+		<div class="col-auto mb-3">
+            <div class="card" style="width: 18rem; background-color: rgb(233,233,233);">
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-muted">infected</h6>
+					          <h5 class="card-title">2.092<a style="color:rgb(250,0,0);font-size: 0.8em; padding-left: 10px;">+83</a></h5>
+                </div>
+            </div>
+        </div>
+    <!-- GENESENE -->    
+    <div class="col-auto mb-3">
+            <div class="card" style="width: 18rem; background-color: rgb(233,233,233);">
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-muted">recovered</h6>
+					          <h5 class="card-title">742</h5>
+                </div>
+            </div>
+        </div>
+    <!-- VERSTORBENE -->    
+    <div class="col-auto mb-3">
+            <div class="card" style="width: 18rem; background-color: rgb(233,233,233);">
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-muted">deceased</h6>
+					          <h5 class="card-title">65<a style="color:rgb(250,0,0);font-size: 0.8em; padding-left: 10px;">+1</a></h5>
+                </div>
+            </div>
+        </div>
+    <!-- QUARANTÄNE -->
+    <div class="col-auto mb-3">
+            <div class="card" style="width: 18rem; background-color: rgb(233,233,233);">
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-muted">quarantine</h6>
+					          <h5 class="card-title">4.296</h5>
+                </div>
+            </div>
+        </div>
+    <!-- CHART 1 = INFEKTIONSVERLAUF CB-->
+		<div class="col-auto mb-3">
+            <div class="card" style="width: 18rem; background-color: rgb(233,233,233);">
+                <div class="card-body">
+                    <canvas id="chart1"></canvas>
+                </div>
+            </div>
+        </div>
+    <!-- CHART 2 = INFIZIERTE NACH ALTER-->
+    <div class="col-auto mb-3">
+            <div class="card" style="width: 18rem; background-color: rgb(233,233,233);">
+                <div class="card-body">
+                    <canvas id="chart2"></canvas>
+                </div>
+            </div>
+        </div>
+    <!-- CHART 3 = VERSTORBENE NACH ALTER -->
+    <div class="col-auto mb-3">
+            <div class="card" style="width: 18rem; background-color: rgb(233,233,233);">
+                <div class="card-body">
+                    <canvas id="chart3"></canvas>
+                </div>
+            </div>
+        </div>
+    <!-- CHART 4 = INFEKTIONSVERLAUF DEUTSCHLAND -->
+		<div class="col-auto mb-3">
+            <div class="card" style="width: 18rem; background-color: rgb(233,233,233);">
+                <div class="card-body">
+                    <canvas id="chart4"></canvas>
+                </div>
+            </div>
+        </div>
+    <!-- CHART 5 = INFIZIERTE NACH ALTER DEUTSCHLAND -->
+    <div class="col-auto mb-3">
+            <div class="card" style="width: 18rem; background-color: rgb(233,233,233);">
+                <div class="card-body">
+                    <canvas id="chart5"></canvas>
+                </div>
+            </div>
+        </div>
+    <!-- CHART 6 = VERSTORBENE NACH ALTER DEUTSCHLAND-->
+    <div class="col-auto mb-3">
+            <div class="card" style="width: 18rem; background-color: rgb(233,233,233);">
+                <div class="card-body">
+                    <canvas id="chart6"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!-- JAVASCRIPT START -->
+<script>
+// CHART 1 - LINECHART INFEKTIONSVERLAUF
+new Chart(document.getElementById("chart1"), {
+  type: 'line',
+  data: {
+    labels: [03,04,05,06,07,08,09,10,11,12],
+    datasets: [{ 
+        data: [15,11,16,32,22,20,500,1000,1500,2100],
+        label: "Infektionsverlauf",
+        backgroundColor: "rgb(255,0,0)",
+		borderColor: "rgb(255,0,0)",
+        fill: false
+      }
+    ]
+  },
+  options: {
+    title: {
+      display: true,
+      text: 'development in my town'
+    }
+  }
+});
+// CHART 2 - BARCHART INFIZIERT NACH ALTER
+new Chart(document.getElementById("chart2"), {
+    type: 'bar',
+    data: {
+      labels: ["bis 20", "21 - 59", "60 - 79", "ab 80"],
+      datasets: [
+        {
+          backgroundColor: ["rgb(250,0,0)", "rgb(200,0,0)","rgb(150,0,0)","rgb(100,0,0)"],
+          data: [100,1500,300,100]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'infected by age in my town'
+      }
+    }
+});
+// CHART 3 - BARCHART VERSTORBEN NACH ALTER
+new Chart(document.getElementById("chart3"), {
+    type: 'bar',
+    data: {
+      labels: ["bis 20", "21 - 59", "60 - 79", "ab 80"],
+      datasets: [
+        {
+          backgroundColor: ["rgb(250,0,0)", "rgb(200,0,0)","rgb(150,0,0)","rgb(100,0,0)"],
+          data: [0,0,4,61]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'deceased by age in my town'
+      }
+    }
+});
+// CHART 4 - LINECHART INFEKTIONSVERLAUF DEUTSCHLAND
+new Chart(document.getElementById("chart4"), {
+  type: 'line',
+  data: {
+    labels: [01,02,03,04,05,06,07,08,09,10],
+    datasets: [{ 
+        data: [86,114,106,106,107,111,133,221,783,878],
+        label: "Infektionsverlauf",
+        backgroundColor: "rgb(255,0,0)",
+		borderColor: "rgb(255,0,0)",
+        fill: false
+      }
+    ]
+  },
+  options: {
+    title: {
+      display: true,
+      text: 'development in country'
+    }
+  }
+});
+// CHART 5 - BARCHART INFIZIERTE NACH ALTER DEUTSCHLAND
+new Chart(document.getElementById("chart5"), {
+    type: 'bar',
+    data: {
+      labels: ["bis 20", "21 - 59", "60 - 79", "ab 80"],
+      datasets: [
+        {
+          backgroundColor: ["rgb(250,0,0)", "rgb(200,0,0)","rgb(150,0,0)","rgb(100,0,0)"],
+          data: [2478,5267,734,784]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'infected by age in country'
+      }
+    }
+});
+// CHART 6 - BARCHART VERSTORBEN NACH ALTER DEUTSCHLAND
+new Chart(document.getElementById("chart6"), {
+    type: 'bar',
+    data: {
+      labels: ["bis 20", "21 - 59", "60 - 79", "ab 80"],
+      datasets: [
+        {
+          backgroundColor: ["rgb(250,0,0)", "rgb(200,0,0)","rgb(150,0,0)","rgb(100,0,0)"],
+          data: [0,0,4,61]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'deceased by age in country'
+      }
+    }
+});
+
+</script>
+</body>
+</html>
